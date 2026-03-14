@@ -49,6 +49,13 @@ body {
     width: auto;
 }
 
+/* Navigation principale */
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 40px; /* espace entre le menu et les drapeaux */
+}
+
 .main-nav ul {
     display: flex;
     gap: 40px;
@@ -69,17 +76,12 @@ body {
     color: #ff7f2a;
 }
 
-.main-nav {
-    display: flex;
-    align-items: center;
-    gap: 40px; /* espace entre le menu et les drapeaux (ajuste selon tes goûts) */
-}
-
+/* Sélecteur de langue */
 .lang-switch {
     display: flex;
     gap: 8px;
-    margin-left: auto;        /* pousse le bloc vers la droite */
-    transform: translateY(2px); /* décalage vers le bas (ajuste si besoin) */
+    margin-left: auto;
+    transform: translateY(2px);
 }
 
 .lang-switch img {
@@ -97,6 +99,7 @@ body {
     transform: scale(1.1);
 }
 
+/* Bouton burger */
 .menu-toggle {
     display: none;
     flex-direction: column;
@@ -111,59 +114,25 @@ body {
 
 .menu-toggle span {
     display: block;
-    width: 25px;
+    width: 100%;
     height: 3px;
     background: white;
-    margin: 5px 0;
-    transition: 0.3s;
+    transition: transform 0.3s, opacity 0.3s;
 }
 
-/* Menu mobile */
-@media (max-width: 900px) {
-    .main-nav {
-        display: flex;
-        align-items: center;
-        gap: 40px; /* Ajuste si besoin */
-    }
-    
-    .main-nav.active {
-        display: flex;
-    }
-    
-    .main-nav ul {
-        flex-direction: column;
-        gap: 15px;
-        width: 100%;
-    }
-    
-    .main-nav a {
-        display: block;
-        padding: 10px 0;
-        font-size: 1.1rem;
-    }
-    
-    .lang-switch {
-        display: flex;
-        gap: 8px;
-        margin-left: auto;        /* pousse le bloc vers la droite */
-        transform: translateY(2px); /* décalage vers le bas (ajuste si besoin) */
-    }
-    
-    .menu-toggle {
-        display: flex;
-    }
-    
-    /* Animation du bouton */
-    .menu-toggle.active span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-    }
-    .menu-toggle.active span:nth-child(2) {
-        opacity: 0;
-    }
-    .menu-toggle.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(7px, -6px);
-    }
+/* Animation du burger quand actif */
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
 }
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
 /* ===== HERO ===== */
 .hero {
     background: #0b1e2f;
@@ -753,10 +722,11 @@ body {
 }
 
 /* ===== RESPONSIVE ===== */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .header-inner {
         flex-wrap: wrap;
         position: relative;
+        padding: 10px 0;
     }
 
     .logo {
@@ -764,22 +734,27 @@ body {
     }
 
     .menu-toggle {
-        display: block;
-        order: 3;
+        display: flex;
+        order: 2;
         margin-left: auto;
+        z-index: 20;
     }
 
-    .lang-switch {
-        display: flex;
-        gap: 8px;
-        margin-left: auto;        /* pousse le bloc vers la droite */
-        transform: translateY(2px); /* décalage vers le bas (ajuste si besoin) */
+    /* Cacher les drapeaux du header sur mobile */
+    .header-inner .lang-switch {
+        display: none;
     }
 
     .main-nav {
-        display: flex;
-        align-items: center;
-        gap: 40px; /* Ajuste si besoin */
+        display: none;
+        width: 100%;
+        order: 3;
+        margin-top: 20px;
+        background: #0b1e2f;
+        border-radius: 20px;
+        padding: 20px;
+        border: 1px solid rgba(255,127,42,0.3);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.5);
     }
 
     .main-nav.active {
@@ -798,6 +773,22 @@ body {
         padding: 10px;
     }
 
+    /* Intégration des drapeaux dans le menu mobile */
+    .main-nav .lang-switch {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255,127,42,0.3);
+    }
+
+    .main-nav .lang-switch img {
+        width: 32px;
+        height: 32px;
+    }
+
+    /* Hero */
     .hero-content {
         grid-template-columns: 1fr;
         text-align: center;
@@ -815,8 +806,18 @@ body {
 
     .hero-right {
         grid-template-columns: 1fr 1fr;
+        gap: 15px;
     }
 
+    .stat-card {
+        padding: 20px 15px;
+    }
+
+    .stat-number {
+        font-size: 2.2rem;
+    }
+
+    /* Expertises */
     .challenges-grid,
     .solutions-grid {
         grid-template-columns: 1fr;
@@ -828,6 +829,11 @@ body {
 
     .challenge-card {
         padding: 30px;
+    }
+
+    /* Projets */
+    .projets-grid {
+        grid-template-columns: 1fr;
     }
 
     .projet-galerie {
@@ -843,22 +849,43 @@ body {
         font-size: 1.5rem;
     }
 
-    /* Ajustements pour le formulaire */
+    /* Formulaire */
     .contact-form {
         padding: 30px 20px;
     }
+
+    /* Footer */
+    .site-footer {
+        padding: 30px 0;
+    }
 }
 
-/* Animation du burger (optionnel) */
-.menu-toggle.open span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-}
-.menu-toggle.open span:nth-child(2) {
-    opacity: 0;
-}
-.menu-toggle.open span:nth-child(3) {
-    transform: rotate(-45deg) translate(7px, -6px);
-}
-.menu-toggle span {
-    transition: transform 0.3s, opacity 0.3s;
+@media (max-width: 480px) {
+    .hero-left h1 {
+        font-size: 2rem;
+    }
+
+    .hero-right {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-card {
+        padding: 15px;
+    }
+
+    .challenge-card {
+        padding: 20px;
+    }
+
+    .challenge-title {
+        font-size: 1.5rem;
+    }
+
+    .modal-content {
+        padding: 15px;
+    }
+
+    .modal-galerie {
+        grid-template-columns: 1fr;
+    }
 }
