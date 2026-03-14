@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+    <link rel="manifest" href="assets/images/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#0b1e2f">
+    <meta name="theme-color" content="#0b1e2f">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXXOS - Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Placeholder pour le header -->
+    <div id="header-placeholder"></div>
+
+    <main>
+        <section class="hero" style="padding-bottom: 40px;">
+            <div class="container">
+                <h1 data-i18n="menu_services">Services</h1>
+            </div>
+        </section>
+
+        <section class="challenges" style="padding-top: 0;">
+            <div class="container">
+                <div class="challenges-grid" id="services-container">
+                    <!-- Les services seront chargés dynamiquement -->
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2 data-i18n="cta_title">Vous avez un projet en hauteur ?</h2>
+                <p data-i18n="cta_desc">Recevez une visite gratuite de nos experts et une solution adaptée à vos besoins.</p>
+                <a href="contact.html" class="cta-button" data-i18n="cta_button">Demander une visite</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Placeholder pour le footer -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Bouton WhatsApp flottant -->
+    <a href="#" class="whatsapp-float" id="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="js/components/header.js"></script>
+    <script src="js/components/footer.js"></script>
+    <script>
+        loadHeader();
+        loadFooter();
+    </script>
+    <script src="js/i18n.js"></script>
+    <script src="js/whatsapp.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- Chargement spécifique des services -->
+    <script>
+        async function loadServices() {
+            const container = document.getElementById('services-container');
+            if (!container) return;
+
+            try {
+                const response = await fetch('data/services.json');
+                const services = await response.json();
+                const lang = window.i18n.getCurrentLang(); // Récupère la langue actuelle
+
+                container.innerHTML = ''; // Vide le conteneur
+                services.forEach(service => {
+                    const titre = service[`titre_${lang}`] || service.titre_fr;
+                    const desc = service[`desc_${lang}`] || service.desc_fr;
+                    const card = document.createElement('div');
+                    card.className = 'challenge-card';
+                    card.innerHTML = `
+                        <div class="challenge-icon"><i class="${service.icone}"></i></div>
+                        <h3 class="challenge-title">${titre}</h3>
+                        <p class="challenge-desc">${desc}</p>
+                    `;
+                    container.appendChild(card);
+                });
+            } catch (error) {
+                console.error('Erreur chargement services:', error);
+            }
+        }
+
+        // Chargement initial
+        document.addEventListener('DOMContentLoaded', loadServices);
+
+        // Rechargement lors du changement de langue
+        document.addEventListener('languageChanged', loadServices);
+    </script>
+</body>
+</html>

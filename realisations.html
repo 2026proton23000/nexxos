@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+    <link rel="manifest" href="assets/images/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#0b1e2f">
+    <meta name="theme-color" content="#0b1e2f">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXXOS - Réalisations</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Styles supplémentaires pour la grille -->
+    <style>
+        .realisations-header {
+            padding: 100px 0 40px;
+            text-align: center;
+        }
+        .realisations-header h1 {
+            font-size: 3rem;
+            color: white;
+            margin-bottom: 16px;
+        }
+        .realisations-header p {
+            color: rgba(255,255,255,0.7);
+            font-size: 1.2rem;
+        }
+        .projets-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        .projet-card {
+            background: rgba(255,255,255,0.03);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid rgba(255,127,42,0.2);
+        }
+        .projet-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(255,127,42,0.2);
+            border-color: #ff7f2a;
+        }
+        .projet-card a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        .projet-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        .projet-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        .projet-card:hover .projet-image img {
+            transform: scale(1.1);
+        }
+        .projet-info {
+            padding: 20px;
+        }
+        .projet-categorie {
+            display: inline-block;
+            background: #ff7f2a;
+            color: #0b1e2f;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        .projet-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+            color: white;
+        }
+        .projet-info p {
+            color: rgba(255,255,255,0.6);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Placeholder pour le header -->
+    <div id="header-placeholder"></div>
+
+    <main>
+        <!-- En-tête de la page réalisations -->
+        <section class="realisations-header">
+            <div class="container">
+                <h1 data-i18n="menu_realisations">Réalisations</h1>
+                <p data-i18n="realisations_subtitle">Découvrez nos projets récents</p>
+            </div>
+        </section>
+
+        <!-- Grille des projets -->
+        <section class="realisations-grid">
+            <div class="container" id="projets-container">
+                <!-- Les projets seront chargés dynamiquement via realisations.js -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Placeholder pour le footer -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Bouton WhatsApp flottant -->
+    <a href="#" class="whatsapp-float" id="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="js/components/header.js"></script>
+    <script src="js/components/footer.js"></script>
+    <script>
+        loadHeader();
+        loadFooter();
+    </script>
+    <script src="js/i18n.js"></script>
+    <script src="js/whatsapp.js"></script>
+    <script src="js/realisations.js"></script>
+</body>
+</html>

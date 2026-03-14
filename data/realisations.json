@@ -1,0 +1,50 @@
+[
+  {
+    "id": "projet1",
+    "icone": "fas fa-city",
+    "categorie_fr": "Façade",
+    "categorie_es": "Fachada",
+    "categorie_en": "Facade",
+    "titre_fr": "Nettoyage de tour",
+    "titre_es": "Limpieza de torre",
+    "titre_en": "Tower cleaning",
+    "lieu": "Immeuble Copiapó",
+    "miniature": "miniature.jpg",
+    "photos": [
+      { "src": "photo1.jpg", "legende_fr": "Préparation", "legende_es": "Preparación", "legende_en": "Preparation" },
+      { "src": "photo2.jpg", "legende_fr": "Nettoyage en cours", "legende_es": "Limpieza en curso", "legende_en": "Cleaning in progress" },
+      { "src": "photo3.jpg", "legende_fr": "Résultat final", "legende_es": "Resultado final", "legende_en": "Final result" }
+    ]
+  },
+  {
+    "id": "projet2",
+    "icone": "fas fa-warehouse",
+    "categorie_fr": "Toiture",
+    "categorie_es": "Techo",
+    "categorie_en": "Roof",
+    "titre_fr": "Réparation complète",
+    "titre_es": "Reparación completa",
+    "titre_en": "Complete repair",
+    "lieu": "Centre commercial Antofagasta",
+    "miniature": "miniature.jpg",
+    "photos": [
+      { "src": "photo1.jpg", "legende_fr": "Inspection", "legende_es": "Inspección", "legende_en": "Inspection" },
+      { "src": "photo2.jpg", "legende_fr": "Réparation", "legende_es": "Reparación", "legende_en": "Repair" }
+    ]
+  },
+  {
+    "id": "projet3",
+    "icone": "fas fa-bridge",
+    "categorie_fr": "Structure",
+    "categorie_es": "Estructura",
+    "categorie_en": "Structure",
+    "titre_fr": "Inspection & certification",
+    "titre_es": "Inspección y certificación",
+    "titre_en": "Inspection & certification",
+    "lieu": "Pont piétonnier Iquique",
+    "miniature": "miniature.jpg",
+    "photos": [
+      { "src": "photo1.jpg", "legende_fr": "Test de résistance", "legende_es": "Prueba de resistencia", "legende_en": "Strength test" }
+    ]
+  }
+]

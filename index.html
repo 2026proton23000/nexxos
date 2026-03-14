@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+    <link rel="manifest" href="assets/images/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#0b1e2f">
+    <meta name="theme-color" content="#0b1e2f">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXXOS - Accueil</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Placeholders pour le header et le footer (injectés par JS) -->
+    <div id="header-placeholder"></div>
+
+    <main>
+        <!-- Section Héro avec chiffres clés -->
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="hero-left">
+                    <h1>
+                        <span data-i18n="hero_title">Maintenance de bâtiments</span><br>
+                        <span data-i18n="hero_subtitle">Solutions en hauteur</span>
+                    </h1>
+                    <p data-i18n="hero_desc">Travaux verticaux, sécurité certifiée et expertise pour vos infrastructures.</p>
+                    <a href="services.html" class="cta-button" data-i18n="hero_cta">Découvrir nos services →</a>
+                </div>
+                <div class="hero-right">
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-building"></i></div>
+                        <div class="stat-number">150+</div>
+                        <div class="stat-label" data-i18n="stats_buildings">Bâtiments entretenus</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-hard-hat"></i></div>
+                        <div class="stat-number">12</div>
+                        <div class="stat-label" data-i18n="stats_experts">Experts certifiés</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-clock"></i></div>
+                        <div class="stat-number">8</div>
+                        <div class="stat-label" data-i18n="stats_experience">ans d'expérience</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-check-circle"></i></div>
+                        <div class="stat-number">98%</div>
+                        <div class="stat-label" data-i18n="stats_satisfaction">Clients satisfaits</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Section des réalisations récentes -->
+        <section class="solutions">
+            <div class="container">
+                <h2 class="section-title" data-i18n="recent_title">Réalisations récentes</h2>
+                <p class="section-subtitle" data-i18n="recent_subtitle">Des projets d'exception pour des clients exigeants.</p>
+                
+                <div class="solutions-grid" id="realisations-container">
+                    <!-- Les réalisations seront chargées dynamiquement via data/realisations.json -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Section des partenaires -->
+        <section class="partners">
+            <div class="container">
+                <h2 class="section-title" data-i18n="partners_title">Ils nous font confiance</h2>
+                <div class="partner-logos">
+                    <span class="partner-logo">COPIAPÓ</span>
+                    <span class="partner-logo">ANTOFAGASTA</span>
+                    <span class="partner-logo">IQUIQUE</span>
+                    <span class="partner-logo">LA SERENA</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Appel à l'action final -->
+        <section class="cta-section">
+            <div class="container">
+                <h2 data-i18n="cta_title">Vous avez un projet en hauteur ?</h2>
+                <p data-i18n="cta_desc">Recevez une visite gratuite de nos experts et une solution adaptée à vos besoins.</p>
+                <a href="contact.html" class="cta-button" data-i18n="cta_button">Demander une visite</a>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <!-- Bouton WhatsApp flottant -->
+    <a href="#" class="whatsapp-float" id="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Scripts : l'ordre est important -->
+    <script src="js/components/header.js"></script>
+    <script src="js/components/footer.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/whatsapp.js"></script>
+    <script src="js/telegram.js"></script>
+    <script src="js/googlesheet.js"></script>
+    <script src="js/contact.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Initialisation du header et footer
+        loadHeader();
+        loadFooter();
+    </script>
+</body>
+</html>

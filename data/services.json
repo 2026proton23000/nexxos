@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "icone": "fas fa-arrow-up",
+    "titre_fr": "Travaux en hauteur",
+    "titre_es": "Trabajos en altura",
+    "titre_en": "Height work",
+    "desc_fr": "Façades, nettoyage de vitres, structures élevées. Interventions sécurisées sur tous types de bâtiments.",
+    "desc_es": "Fachadas, limpieza de vidrios, estructuras elevadas. Intervenciones seguras en todo tipo de edificios.",
+    "desc_en": "Facades, window cleaning, elevated structures. Safe interventions on all types of buildings."
+  },
+  {
+    "id": 2,
+    "icone": "fas fa-tools",
+    "titre_fr": "Maintenance intégrale",
+    "titre_es": "Mantenimiento integral",
+    "titre_en": "Comprehensive maintenance",
+    "desc_fr": "Inspection, réparation et conservation d'infrastructures, toitures et structures métalliques.",
+    "desc_es": "Inspección, reparación y conservación de infraestructuras, techumbres y estructuras metálicas.",
+    "desc_en": "Inspection, repair and conservation of infrastructures, roofing and metal structures."
+  },
+  {
+    "id": 3,
+    "icone": "fas fa-hard-hat",
+    "titre_fr": "Réparations spécialisées",
+    "titre_es": "Reparaciones especializadas",
+    "titre_en": "Specialized repairs",
+    "desc_fr": "Toitures, structures métalliques, scellements haute complexité.",
+    "desc_es": "Techumbres, estructuras metálicas, sellados de alta complejidad.",
+    "desc_en": "Roofing, metal structures, high-complexity sealing."
+  },
+  {
+    "id": 4,
+    "icone": "fas fa-chart-line",
+    "titre_fr": "Gestion de projets",
+    "titre_es": "Gestión de proyectos",
+    "titre_en": "Project management",
+    "desc_fr": "Planification et exécution avec normes de sécurité et qualité.",
+    "desc_es": "Planificación y ejecución con estándares de seguridad y calidad.",
+    "desc_en": "Planning and execution with safety and quality standards."
+  }
+]
