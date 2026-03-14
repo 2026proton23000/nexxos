@@ -91,9 +91,14 @@ body {
 
 .menu-toggle {
     display: none;
-    background: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: transparent;
     border: none;
     cursor: pointer;
+    padding: 0;
 }
 
 .menu-toggle span {
@@ -105,6 +110,59 @@ body {
     transition: 0.3s;
 }
 
+/* Menu mobile */
+@media (max-width: 900px) {
+    .main-nav {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #0b1e2f;
+        padding: 20px;
+        border-top: 1px solid rgba(255,127,42,0.3);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    }
+    
+    .main-nav.active {
+        display: flex;
+    }
+    
+    .main-nav ul {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+    }
+    
+    .main-nav a {
+        display: block;
+        padding: 10px 0;
+        font-size: 1.1rem;
+    }
+    
+    .lang-switch {
+        margin-top: 10px;
+        align-self: center;
+    }
+    
+    .menu-toggle {
+        display: flex;
+    }
+    
+    /* Animation du bouton */
+    .menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+}
 /* ===== HERO ===== */
 .hero {
     background: #0b1e2f;
@@ -694,23 +752,116 @@ body {
 }
 
 /* ===== RESPONSIVE ===== */
-@media (max-width: 900px) {
+@media (max-width: 768px) {
+    .header-inner {
+        flex-wrap: wrap;
+        position: relative;
+    }
+
+    .logo {
+        flex: 1;
+    }
+
+    .menu-toggle {
+        display: block;
+        order: 3;
+        margin-left: auto;
+    }
+
+    .lang-switch {
+        order: 2;
+        margin-right: 15px;
+    }
+
+    .main-nav {
+        display: none;
+        width: 100%;
+        order: 4;
+        margin-top: 20px;
+        background: rgba(11, 30, 47, 0.95);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        padding: 20px;
+        border: 1px solid rgba(255,127,42,0.3);
+    }
+
+    .main-nav.active {
+        display: block;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .main-nav a {
+        font-size: 1.2rem;
+        display: block;
+        padding: 10px;
+    }
+
     .hero-content {
         grid-template-columns: 1fr;
         text-align: center;
+        gap: 30px;
     }
+
+    .hero-left h1 {
+        font-size: 2.5rem;
+    }
+
     .hero-left p {
         margin-left: auto;
         margin-right: auto;
     }
+
+    .hero-right {
+        grid-template-columns: 1fr 1fr;
+    }
+
     .challenges-grid,
     .solutions-grid {
         grid-template-columns: 1fr;
     }
-    .main-nav {
-        display: none; /* à remplacer par un menu hamburger plus tard */
+
+    .section-title {
+        font-size: 2rem;
     }
-    .menu-toggle {
-        display: block;
+
+    .challenge-card {
+        padding: 30px;
     }
+
+    .projet-galerie {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-content {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .modal-content h2 {
+        font-size: 1.5rem;
+    }
+
+    /* Ajustements pour le formulaire */
+    .contact-form {
+        padding: 30px 20px;
+    }
+}
+
+/* Animation du burger (optionnel) */
+.menu-toggle.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+.menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+}
+.menu-toggle.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+.menu-toggle span {
+    transition: transform 0.3s, opacity 0.3s;
 }
