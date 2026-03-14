@@ -1,5 +1,5 @@
 // Gestion de l'internationalisation
-let currentLang = 'fr';
+let currentLang = 'es';
 let translations = {};
 
 // Charger les traductions (fichiers de langue pour les textes statiques)
